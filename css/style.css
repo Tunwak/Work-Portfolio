@@ -1,0 +1,17 @@
+body {
+    padding-top: 56px; /* Adjust for fixed navbar height */
+}
+
+.jumbotron {
+    background-image: url('https://via.placeholder.com/1500x800'); /* Placeholder image */
+    background-size: cover;
+    background-position: center;
+}
+
+.card {
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
