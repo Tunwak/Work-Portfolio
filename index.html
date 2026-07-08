@@ -3,21 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio ของฉัน</title>
+    <title>Tunwakheanphet | Portfolio</title>
+
+    <!-- Bootstrap 5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- AOS (Animate On Scroll) -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+<body data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="80" tabindex="0">
+
+    <!-- Loader -->
+    <div id="preloader">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div class="container">
-            <a class="navbar-brand" href="#">Tunwakheanphet Portfolio </a>
+            <a class="navbar-brand fw-bold" href="#home"><span class="text-gradient">Tunwakheanphet</span> Portfolio</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#home">หน้าแรก</a>
+                        <a class="nav-link" href="#home">หน้าแรก</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#about">เกี่ยวกับผม</a>
@@ -29,132 +46,390 @@
                         <a class="nav-link" href="#projects">ผลงาน</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="#certificates">ใบประกาศนียบัตร</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="#contact">ติดต่อ</a>
+                    </li>
+                    <li class="nav-item ms-lg-3">
+                        <button id="themeToggle" class="btn btn-sm btn-outline-light rounded-circle theme-btn" title="สลับธีม">
+                            <i class="bi bi-moon-stars-fill"></i>
+                        </button>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <header id="home" class="jumbotron jumbotron-fluid bg-primary text-white text-center d-flex align-items-center min-vh-100">
-        <div class="container">
-            <h1 class="display-4">ยินดีต้อนรับสู่ Portfolio ของผม</h1>
-            <p class="lead">นักศึกษาที่กำลังจัดแสดงผลงานและทักษะของผม</p>
-            <a href="#about" class="btn btn-light btn-lg">เรียนรู้เพิ่มเติม</a>
+    <!-- Hero -->
+    <header id="home" class="hero d-flex align-items-center min-vh-100 text-white text-center">
+        <div class="hero-overlay"></div>
+        <div class="container position-relative" data-aos="fade-up">
+            <img src="images/1.1.jpg" alt="Tunwakheanphet" class="hero-avatar mb-4">
+            <h1 class="display-4 fw-bold">ยินดีต้อนรับสู่ <span class="text-gradient">Portfolio</span> ของผม</h1>
+            <p class="lead mb-4">ธันวา แคนเพ็ชร — นักศึกษาวิศวกรรมคอมพิวเตอร์ ผู้หลงใหลในการพัฒนาเว็บและเกม</p>
+            <div class="d-flex justify-content-center gap-3 flex-wrap">
+                <a href="#about" class="btn btn-light btn-lg px-4">เรียนรู้เพิ่มเติม</a>
+                <a href="#contact" class="btn btn-outline-light btn-lg px-4">ติดต่อผม</a>
+            </div>
+            <div class="scroll-down mt-5">
+                <a href="#about"><i class="bi bi-mouse2 fs-3"></i></a>
+            </div>
         </div>
     </header>
 
-    <section id="about" class="py-5">
+    <!-- About -->
+    <section id="about" class="py-5 section">
         <div class="container">
-            <h2 class="text-center mb-4">เกี่ยวกับผม</h2>
-            <div class="row">
-                <div class="col-md-6 mx-auto">
-                    <p>สวัสดีครับผมนายธันวา แคนเพ็ชร เป็นนักศึกษาที่มีความมุ่งมั่นตั้งใจเรียน สาขาวิศวกรรมคอมพิวเตอร์ ที่มหาวิทยาลัยราชภัฎพิบูลสงคราม ผมมีความกระตือรือร้นเกี่ยวกับคอมพิวเตอร์การสร้างเว็บและการสร้างเกมต่างๆและมีความสนใจที่จะเรียนรู้และเติบโตอย่างต่อเนื่องในโลกของเทคโนโลยีและการพัฒนา</p>
+            <h2 class="section-title text-center mb-5" data-aos="fade-up">เกี่ยวกับผม</h2>
+            <div class="row align-items-center g-5">
+                <div class="col-md-5 text-center" data-aos="fade-right">
+                    <img src="images/1.png" alt="About Tunwakheanphet" class="img-fluid about-img rounded-4 shadow">
+                </div>
+                <div class="col-md-7" data-aos="fade-left">
+                    <p>สวัสดีครับ ผมนายธันวา แคนเพ็ชร เป็นนักศึกษาที่มีความมุ่งมั่นตั้งใจเรียน สาขาวิศวกรรมคอมพิวเตอร์ ที่มหาวิทยาลัยราชภัฏพิบูลสงคราม ผมมีความกระตือรือร้นเกี่ยวกับคอมพิวเตอร์ การสร้างเว็บ และการสร้างเกมต่างๆ และมีความสนใจที่จะเรียนรู้และเติบโตอย่างต่อเนื่องในโลกของเทคโนโลยีและการพัฒนา</p>
                     <p>ผมสนุกกับการนำเสนอแนวคิดให้เป็นจริงผ่านโค้ดและการแก้ปัญหาอย่างสร้างสรรค์ Portfolio นี้เป็นเพียงส่วนหนึ่งของการเดินทาง ทักษะ และโครงการที่ผมเคยทำมา</p>
+
+                    <div class="row mt-4 about-info-list">
+                        <div class="col-sm-6 mb-2">
+                            <span class="fw-semibold"><i class="bi bi-person-fill me-2 text-gradient-icon"></i>ชื่อ:</span> ธันวา แคนเพ็ชร
+                        </div>
+                        <div class="col-sm-6 mb-2">
+                            <span class="fw-semibold"><i class="bi bi-mortarboard-fill me-2 text-gradient-icon"></i>การศึกษา:</span> วิศวกรรมคอมพิวเตอร์
+                        </div>
+                        <div class="col-sm-6 mb-2">
+                            <span class="fw-semibold"><i class="bi bi-building me-2 text-gradient-icon"></i>สถาบัน:</span> ม.ราชภัฏพิบูลสงคราม
+                        </div>
+                        <div class="col-sm-6 mb-2">
+                            <span class="fw-semibold"><i class="bi bi-geo-alt-fill me-2 text-gradient-icon"></i>ที่อยู่:</span> พิษณุโลก, ประเทศไทย
+                        </div>
+                        <div class="col-sm-6 mb-2">
+                            <span class="fw-semibold"><i class="bi bi-envelope-fill me-2 text-gradient-icon"></i>อีเมล:</span> tunwa.k@psru.ac.th
+                        </div>
+                        <div class="col-sm-6 mb-2">
+                            <span class="fw-semibold"><i class="bi bi-briefcase-fill me-2 text-gradient-icon"></i>สถานะ:</span> เปิดรับงาน / ฝึกงาน
+                        </div>
+                    </div>
+
+                    <a href="#" class="btn btn-primary mt-4 px-4">
+                        <i class="bi bi-download me-2"></i>ดาวน์โหลดเรซูเม่
+                    </a>
+                </div>
+            </div>
+
+            <!-- Interests / What I do -->
+            <div class="row mt-5 g-4">
+                <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="0">
+                    <div class="interest-box text-center p-4 h-100">
+                        <i class="bi bi-code-slash"></i>
+                        <h6 class="mt-3 mb-0">Web Development</h6>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="100">
+                    <div class="interest-box text-center p-4 h-100">
+                        <i class="bi bi-controller"></i>
+                        <h6 class="mt-3 mb-0">Game Development</h6>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="200">
+                    <div class="interest-box text-center p-4 h-100">
+                        <i class="bi bi-controller"></i>
+                        <h6 class="mt-3 mb-0">Backend Development</h6>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="300">
+                    <div class="interest-box text-center p-4 h-100">
+                        <i class="bi bi-lightbulb"></i>
+                        <h6 class="mt-3 mb-0">Innovation</h6>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="skills" class="bg-light py-5">
+
+    <!-- Skills -->
+    <section id="skills" class="py-5 section section-alt">
         <div class="container">
-            <h2 class="text-center mb-4">ทักษะ</h2>
-            <div class="row text-center">
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
+            <h2 class="section-title text-center mb-5" data-aos="fade-up">ทักษะ</h2>
+            <div class="row g-4">
+                <!-- C/C++ Programming -->
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="0">
+                    <div class="card skill-card h-100 text-center border-0 shadow-sm">
                         <div class="card-body">
-                            <h4 class="card-title">HTML & CSS</h4>
-                            <p class="card-text">มีความเชี่ยวชาญในการสร้างหน้าเว็บที่ตอบสนองและสวยงาม</p>
+                            <i class="bi bi-code-slash skill-icon"></i>
+                            <h4 class="card-title mt-3">C/C++ Programming</h4>
+                            <p class="card-text">เขียนโปรแกรมเชิงโครงสร้างและการวิเคราะห์ข้อมูล</p>
+                            <div class="progress skill-progress">
+                                <div class="progress-bar" role="progressbar" style="width: 75%"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
+                <!-- HTML + CSS -->
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card skill-card h-100 text-center border-0 shadow-sm">
                         <div class="card-body">
-                            <h4 class="card-title">JavaScript</h4>
-                            <p class="card-text">มีประสบการณ์ในการพัฒนาเว็บแบบอินเทอร์แอคทีฟและเฟรมเวิร์กส่วนหน้า</p>
+                            <i class="bi bi-filetype-html skill-icon"></i>
+                            <h4 class="card-title mt-3">HTML & CSS</h4>
+                            <p class="card-text">สร้างหน้าเว็บที่ตอบสนองและสวยงาม</p>
+                            <div class="progress skill-progress">
+                                <div class="progress-bar" role="progressbar" style="width: 90%"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
+                <!-- JavaScript + TypeScript -->
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card skill-card h-100 text-center border-0 shadow-sm">
                         <div class="card-body">
-                            <h4 class="card-title">Bootstrap 5</h4>
-                            <p class="card-text">มีความสามารถในการใช้ Bootstrap เพื่อการพัฒนา UI ที่รวดเร็วและมีประสิทธิภาพ</p>
+                            <i class="bi bi-filetype-js skill-icon"></i>
+                            <h4 class="card-title mt-3">JavaScript & TypeScript</h4>
+                            <p class="card-text">พัฒนาเว็บแบบอินเทอร์แอคทีฟและเฟรมเวิร์กสมัยใหม่</p>
+                            <div class="progress skill-progress">
+                                <div class="progress-bar" role="progressbar" style="width: 85%"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <!-- เพิ่มทักษะอื่นๆ ได้ตามต้องการ -->
+                <!-- Express.js + Next.js -->
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card skill-card h-100 text-center border-0 shadow-sm">
+                        <div class="card-body">
+                            <i class="bi bi-server skill-icon"></i>
+                            <h4 class="card-title mt-3">Express.js & Next.js</h4>
+                            <p class="card-text">สร้าง API และ Full-stack Web Applications</p>
+                            <div class="progress skill-progress">
+                                <div class="progress-bar" role="progressbar" style="width: 80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- MongoDB + MySQL + SQL -->
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="card skill-card h-100 text-center border-0 shadow-sm">
+                        <div class="card-body">
+                            <i class="bi bi-database skill-icon"></i>
+                            <h4 class="card-title mt-3">MongoDB & SQL</h4>
+                            <p class="card-text">ออกแบบฐานข้อมูลและเขียนคำสั่งถึงข้อมูล</p>
+                            <div class="progress skill-progress">
+                                <div class="progress-bar" role="progressbar" style="width: 75%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Vercel + GitHub -->
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="500">
+                    <div class="card skill-card h-100 text-center border-0 shadow-sm">
+                        <div class="card-body">
+                            <i class="bi bi-hdd-rack skill-icon"></i>
+                            <h4 class="card-title mt-3">Vercel & GitHub</h4>
+                            <p class="card-text"> Deploy และจัดการเวอร์ชันโค้ด</p>
+                            <div class="progress skill-progress">
+                                <div class="progress-bar" role="progressbar" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Python -->
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="600">
+                    <div class="card skill-card h-100 text-center border-0 shadow-sm">
+                        <div class="card-body">
+                            <i class="bi bi-filetype-py skill-icon"></i>
+                            <h4 class="card-title mt-3">Python</h4>
+                            <p class="card-text">การทำข้อมูลคำนวณและการทำงานอัตโนยัติ</p>
+                            <div class="progress skill-progress">
+                                <div class="progress-bar" role="progressbar" style="width: 70%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Render -->
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="700">
+                    <div class="card skill-card h-100 text-center border-0 shadow-sm">
+                        <div class="card-body">
+                            <i class="bi bi-cloud-upload skill-icon"></i>
+                            <h4 class="card-title mt-3">Render</h4>
+                            <p class="card-text">โฮสติ้งเว็บแอปพลิเคชัน</p>
+                            <div class="progress skill-progress">
+                                <div class="progress-bar" role="progressbar" style="width: 75%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="projects" class="py-5">
+    <!-- Projects -->
+    <section id="projects" class="py-5 section">
         <div class="container">
-            <h2 class="text-center mb-4">ผลงาน</h2>
-            <div class="row">
-                <div class="col-md-6 col-lg-4 mb-4">
-                    <div class="card h-100">
-                        <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Project 1">
+            <h2 class="section-title text-center mb-5" data-aos="fade-up">ผลงาน</h2>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="0">
+                    <div class="card project-card h-100 border-0 shadow-sm">
+                        <div class="project-img-wrap">
+                            <img src="images/1.png" class="card-img-top" alt="PSRU CYBER HACKATHON">
+                            <div class="project-overlay">
+                                <a href="#" class="btn btn-light btn-sm">ดูโปรเจกต์ <i class="bi bi-arrow-up-right"></i></a>
+                            </div>
+                        </div>
                         <div class="card-body">
-                            <h5 class="card-title">PSRU CYBER HACKATHON [2026) #3</h5>
-                            <p class="card-text">เป็นกิจกรรมที่ให้ความรู้เกี่ยวกับการป้องกันจตัวทางไซเบอร์</p>
-                            <a href="#" class="btn btn-primary">ดูโปรเจกต์</a>
+                            <h5 class="card-title">PSRU CYBER HACKATHON 2026 #3</h5>
+                            <p class="card-text">กิจกรรมที่ให้ความรู้เกี่ยวกับการป้องกันภัยทางไซเบอร์</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-4 mb-4">
-                    <div class="card h-100">
-                        <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Project 2">
+                <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="card project-card h-100 border-0 shadow-sm">
+                        <div class="project-img-wrap">
+                            <img src="images/3.png" class="card-img-top" alt="Project 3">
+                            <div class="project-overlay">
+                                <a href="#" class="btn btn-light btn-sm">ดูโปรเจกต์ <i class="bi bi-arrow-up-right"></i></a>
+                            </div>
+                        </div>
                         <div class="card-body">
-                            <h5 class="card-title">New regional starts p1</h5>
-                            <p class="card-text">เป็นกิจกรรมที่ให้ความรู้เกี่ยวกับการเป็นนักธุรกิจ</p>
-                            <a href="#" class="btn btn-primary">ดูโปรเจกต์</a>
+                            <h5 class="card-title">ResearchtoMarker</h5>
+                            <p class="card-text">การนำผลงานวิจัยมาต่อยอดเป็นนวัตกรรม สินค้า หรือบริการที่สามารถนำไปใช้จริงและจำหน่ายในตลาดได้ โดยมุ่งสร้างคุณค่าและมูลค่าทางเศรษฐกิจจากงานวิจัย.</p>
                         </div>
                     </div>
                 </div>
-                <!-- เพิ่มโปรเจกต์อื่นๆ ได้ตามต้องการ -->
+            
+
             </div>
         </div>
     </section>
 
-    <section id="contact" class="bg-dark text-white py-5">
+    <!-- Certificates -->
+    <section id="certificates" class="py-5 section section-alt">
         <div class="container">
-            <h2 class="text-center mb-4">ติดต่อฉัน</h2>
-            <div class="row">
-                <div class="col-md-8 mx-auto">
-                    <p class="text-center">สามารถติดต่อฉันได้ทางฟอร์มด้านล่างนี้ หรือเชื่อมต่อกับฉันบนโซเชียลมีเดีย</p>
-                    <form>
-                        <div class="mb-3">
-                            <label for="name" class="form-label">ชื่อ</label>
-                            <input type="text" class="form-control" id="name" required>
+            <h2 class="section-title text-center mb-5" data-aos="fade-up">ใบประกาศนียบัตร</h2>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="0">
+                    <div class="card cert-card h-100 border-0 shadow-sm">
+                        <div class="cert-img-wrap">
+                            <img src="images/1.png" class="card-img-top" alt="Certificate 1">
+                            <div class="cert-overlay">
+                                <a href="images/1.png" target="_blank" class="btn btn-light btn-sm">
+                                    <i class="bi bi-zoom-in"></i> ดูใบเต็ม
+                                </a>
+                            </div>
                         </div>
-                        <div class="mb-3">
-                            <label for="email" class="form-label">อีเมล</label>
-                            <input type="email" class="form-control" id="email" required>
+                        <div class="card-body">
+                            <h5 class="card-title">PSRU CYBER HACKATHON 2026 #3</h5>
+                            <p class="card-text mb-1">ใบประกาศนียบัตรผู้เข้าร่วมกิจกรรมด้านความปลอดภัยทางไซเบอร์</p>
+                            <span class="badge cert-badge"><i class="bi bi-calendar-event me-1"></i>2026</span>
                         </div>
-                        <div class="mb-3">
-                            <label for="message" class="form-label">ข้อความ</label>
-                            <textarea class="form-control" id="message" rows="5" required></textarea>
+                    </div>
+                </div>
+               
+                <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="card cert-card h-100 border-0 shadow-sm">
+                        <div class="cert-img-wrap">
+                            <img src="images/4.png" class="card-img-top" alt="Certificate 4">
+                            <div class="cert-overlay">
+                                <a href="images/4.png" target="_blank" class="btn btn-light btn-sm">
+                                    <i class="bi bi-zoom-in"></i> ดูใบเต็ม
+                                </a>
+                            </div>
                         </div>
-                        <button type="submit" class="btn btn-primary">ส่งข้อความ</button>
-                    </form>
-                    <div class="text-center mt-4">
-                        <p>หรือค้นหาฉันได้ที่:</p>
-                        <!-- เพิ่มลิงก์โซเชียลมีเดียที่นี่ เช่น LinkedIn, GitHub -->
-                        <a href="#" class="text-white me-3">LinkedIn</a>
-                        <a href="#" class="text-white">GitHub</a>
+                        <div class="card-body">
+                            <h5 class="card-title">Research to Market</h5>
+                            <p class="card-text mb-1">ใบประกาศนียบัตรผู้เข้าร่วมกิจกรรมนำงานวิจัยต่อยอดเชิงพาณิชย์</p>
+                            <span class="badge cert-badge"><i class="bi bi-calendar-event me-1"></i>2025</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="card cert-card h-100 border-0 shadow-sm">
+                        <div class="cert-img-wrap">
+                            <img src="images/5.png" class="card-img-top" alt="Certificate 5">
+                            <div class="cert-overlay">
+                                <a href="images/5.png" target="_blank" class="btn btn-light btn-sm">
+                                    <i class="bi bi-zoom-in"></i> ดูใบเต็ม
+                                </a>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">BASIC CYBERSECURITY</h5>
+                            <p class="card-text mb-1">ใบประกาศนียบัตรผู้เข้าร่วมกิจกรรมพื้นฐานด้านความปลอดภัยทางไซเบอร์</p>
+                            <span class="badge cert-badge"><i class="bi bi-calendar-event me-1"></i>2025</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="card cert-card h-100 border-0 shadow-sm">
+                        <div class="cert-img-wrap">
+                            <img src="images/6.png" class="card-img-top" alt="Certificate 6">
+                            <div class="cert-overlay">
+                                <a href="images/6.png" target="_blank" class="btn btn-light btn-sm">
+                                    <i class="bi bi-zoom-in"></i> ดูใบเต็ม
+                                </a>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Python Essentials 1</h5>
+                            <p class="card-text mb-1">ใบประกาศนียบัตรผู้เข้าร่วมกิจกรรมพื้นฐานด้านการเขียนโปรแกรมด้วยภาษา Python</p>
+                            <span class="badge cert-badge"><i class="bi bi-calendar-event me-1"></i>2025</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="bg-dark text-white text-center py-3">
-        <p>&copy; 2023 Portfolio ของฉัน สงวนลิขสิทธิ์</p>
+    <!-- Contact -->
+    <section id="contact" class="py-5 section section-dark text-white">
+        <div class="container">
+            <h2 class="section-title text-center mb-5" data-aos="fade-up">ติดต่อฉัน</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center" data-aos="fade-up">
+                    <p class="lead mb-4">หากคุณสนใจในผลงานหรือต้องการติดต่อผม สามารถทำได้ตามช่องทางด้านล่างนี้</p>
+                    <div class="row g-4 contact-details">
+                        <div class="col-md-4">
+                            <div class="contact-item p-4 h-100">
+                                <i class="bi bi-envelope-fill contact-icon"></i>
+                                <h5 class="mt-3 mb-1">อีเมล</h5>
+                                <p class="mb-0">tunwa.k@psru.ac.th</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="contact-item p-4 h-100">
+                                <i class="bi bi-telephone-fill contact-icon"></i>
+                                <h5 class="mt-3 mb-1">โทรศัพท์</h5>
+                                <p class="mb-0">080-245-9710</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="contact-item p-4 h-100">
+                                <i class="bi bi-geo-alt-fill contact-icon"></i>
+                                <h5 class="mt-3 mb-1">ที่อยู่</h5>
+                                <p class="mb-0">พิษณุโลก, ประเทศไทย</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="social-links mt-5">
+                        <a href="#" class="social-icon" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" class="social-icon" title="GitHub"><i class="bi bi-github"></i></a>
+                        <a href="#" class="social-icon" title="Facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="social-icon" title="Instagram"><i class="bi bi-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="text-white text-center py-4">
+        <p class="mb-0">&copy; <span id="year"></span> Tunwakheanphet Portfolio สงวนลิขสิทธิ์</p>
     </footer>
 
+    <!-- Back to top -->
+    <a href="#home" id="backToTop" class="btn btn-primary rounded-circle back-to-top" title="กลับด้านบน">
+        <i class="bi bi-arrow-up"></i>
+    </a>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>
