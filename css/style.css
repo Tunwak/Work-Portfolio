@@ -100,10 +100,12 @@ body.dark-theme .text-muted {
    Text gradient utility
 ========================================= */
 .text-gradient {
-    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    background: linear-gradient(90deg, #f0f9ff 0%, #dff5ff 28%, #8ed8ff 58%, #d8f1ff 100%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
+    text-shadow: 0 0 18px rgba(168, 226, 255, 0.22);
+    display: inline-block;
 }
 
 /* =========================================
@@ -567,16 +569,30 @@ body.dark-theme .info-card h4 {
 }
 
 .contact-form .form-label {
-    font-weight: 500;
-    color: rgba(255,255,255,0.9);
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    color: #f2f7ff;
+    margin-bottom: 0.6rem;
 }
 
 .contact-form .form-control {
     border-radius: 0.8rem;
     padding: 0.8rem 1rem;
-    border: 1px solid rgba(255,255,255,0.1);
-    background: rgba(255,255,255,0.04);
-    color: white;
+    border: 1px solid rgba(255,255,255,0.14);
+    background: rgba(148, 163, 184, 0.08);
+    color: #f8fbff;
+    box-shadow: inset 0 1px 2px rgba(15, 23, 42, 0.12);
+}
+
+.contact-form .form-control::placeholder {
+    color: rgba(226, 232, 240, 0.7);
+}
+
+.contact-form .form-control:focus {
+    background: rgba(148, 163, 184, 0.1);
+    border-color: rgba(125, 211, 252, 0.7);
+    box-shadow: 0 0 0 0.2rem rgba(125, 211, 252, 0.2);
+    color: #ffffff;
 }
 
 .contact-item {

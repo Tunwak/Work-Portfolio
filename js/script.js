@@ -118,12 +118,13 @@ document.addEventListener('DOMContentLoaded', () => {
         window.addEventListener('scroll', toggleBackToTop);
     }
 
-    /* ---------- Contact form validation & fake submit ---------- */
+    /* ---------- Contact form validation & real submit ---------- */
     const contactForm = document.getElementById('contactForm');
     const formSuccess = document.getElementById('formSuccess');
+    const formError = document.getElementById('formError');
 
     if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
+        contactForm.addEventListener('submit', async (e) => {
             e.preventDefault();
 
             if (!contactForm.checkValidity()) {
@@ -132,14 +133,42 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
-            // Simulate successful submission (replace with real backend / API call)
-            formSuccess.classList.remove('d-none');
-            contactForm.reset();
-            contactForm.classList.remove('was-validated');
+            const submitButton = contactForm.querySelector('button[type="submit"]');
+            const originalText = submitButton.textContent;
 
-            setTimeout(() => {
-                formSuccess.classList.add('d-none');
-            }, 4000);
+            submitButton.disabled = true;
+            submitButton.textContent = 'กำลังส่ง...';
+            formSuccess.classList.add('d-none');
+            formError.classList.add('d-none');
+
+            try {
+                const response = await fetch(contactForm.action, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        name: document.getElementById('name').value,
+                        email: document.getElementById('email').value,
+                        subject: document.getElementById('subject').value,
+                        message: document.getElementById('message').value
+                    })
+                });
+
+                if (!response.ok) {
+                    throw new Error('Submission failed');
+                }
+
+                formSuccess.classList.remove('d-none');
+                contactForm.reset();
+                contactForm.classList.remove('was-validated');
+            } catch (error) {
+                formError.classList.remove('d-none');
+            } finally {
+                submitButton.disabled = false;
+                submitButton.textContent = originalText;
+            }
         });
     }
 

@@ -139,6 +139,7 @@
                         </div>
                         <div class="resume-tags">
                             <span>Frontend</span>
+                            <span>Backend</span>
                             <span>UX Focus</span>
                             <span>Problem Solving</span>
                             <span>Web Development</span>
@@ -484,29 +485,34 @@
                 </div>
 
                 <div class="col-lg-5" data-aos="fade-left">
-                    <form id="contactForm" class="contact-form needs-validation" novalidate>
+                    <form id="contactForm" class="contact-form needs-validation" method="POST" action="https://formsubmit.co/ajax/tunwa.k@psru.ac.th" novalidate>
+                        <input type="hidden" name="_subject" value="Portfolio Contact Form">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_template" value="table">
+
                         <div class="mb-3">
                             <label for="name" class="form-label">ชื่อ</label>
-                            <input type="text" class="form-control" id="name" placeholder="กรอกชื่อของคุณ" required>
+                            <input type="text" class="form-control" id="name" name="name" placeholder="กรอกชื่อของคุณ" required>
                             <div class="invalid-feedback">กรุณากรอกชื่อของคุณ</div>
                         </div>
                         <div class="mb-3">
                             <label for="email" class="form-label">อีเมล</label>
-                            <input type="email" class="form-control" id="email" placeholder="example@email.com" required>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="example@email.com" required>
                             <div class="invalid-feedback">กรุณากรอกอีเมลที่ถูกต้อง</div>
                         </div>
                         <div class="mb-3">
                             <label for="subject" class="form-label">หัวข้อ</label>
-                            <input type="text" class="form-control" id="subject" placeholder="เรื่องที่ต้องการติดต่อ" required>
+                            <input type="text" class="form-control" id="subject" name="subject" placeholder="เรื่องที่ต้องการติดต่อ" required>
                             <div class="invalid-feedback">กรุณากรอกหัวข้อ</div>
                         </div>
                         <div class="mb-3">
                             <label for="message" class="form-label">ข้อความ</label>
-                            <textarea class="form-control" id="message" rows="4" placeholder="เขียนข้อความของคุณที่นี่" required></textarea>
+                            <textarea class="form-control" id="message" name="message" rows="4" placeholder="เขียนข้อความของคุณที่นี่" required></textarea>
                             <div class="invalid-feedback">กรุณากรอกข้อความ</div>
                         </div>
                         <button type="submit" class="btn btn-primary w-100">ส่งข้อความ</button>
                         <div id="formSuccess" class="alert alert-success mt-3 d-none">ส่งข้อความสำเร็จแล้ว ขอบคุณที่ติดต่อมา</div>
+                        <div id="formError" class="alert alert-danger mt-3 d-none">ไม่สามารถส่งข้อความได้ กรุณาลองใหม่อีกครั้ง</div>
                     </form>
                 </div>
             </div>
