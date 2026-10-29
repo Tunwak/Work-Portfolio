@@ -124,7 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const formError = document.getElementById('formError');
 
     if (contactForm) {
-        contactForm.addEventListener('submit', async (e) => {
+        contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
 
             if (!contactForm.checkValidity()) {
@@ -133,34 +133,32 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const subject = document.getElementById('subject').value.trim();
+            const message = document.getElementById('message').value.trim();
+
+            const recipient = 'tunwa.k@psru.ac.th';
+            const mailtoSubject = encodeURIComponent(subject || 'Portfolio Contact');
+            const mailtoBody = encodeURIComponent(
+                `ชื่อ: ${name}\n` +
+                `อีเมล: ${email}\n` +
+                `หัวข้อ: ${subject}\n\n` +
+                `ข้อความ:\n${message}`
+            );
+
             const submitButton = contactForm.querySelector('button[type="submit"]');
             const originalText = submitButton.textContent;
 
             submitButton.disabled = true;
-            submitButton.textContent = 'กำลังส่ง...';
+            submitButton.textContent = 'กำลังเปิดอีเมล...';
             formSuccess.classList.add('d-none');
             formError.classList.add('d-none');
 
             try {
-                const response = await fetch(contactForm.action, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Accept': 'application/json'
-                    },
-                    body: JSON.stringify({
-                        name: document.getElementById('name').value,
-                        email: document.getElementById('email').value,
-                        subject: document.getElementById('subject').value,
-                        message: document.getElementById('message').value
-                    })
-                });
-
-                if (!response.ok) {
-                    throw new Error('Submission failed');
-                }
-
+                window.location.href = `mailto:${recipient}?subject=${mailtoSubject}&body=${mailtoBody}`;
                 formSuccess.classList.remove('d-none');
+                formSuccess.textContent = 'เปิดแอปอีเมลของคุณแล้ว กรุณาส่งข้อความเพื่อส่งข้อมูลให้ผม';
                 contactForm.reset();
                 contactForm.classList.remove('was-validated');
             } catch (error) {
