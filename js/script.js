@@ -139,14 +139,17 @@ document.addEventListener('DOMContentLoaded', () => {
             const message = document.getElementById('message').value.trim();
 
             const recipient = 'tunwa.k@psru.ac.th';
-            const mailtoSubject = encodeURIComponent(subject || 'Portfolio Contact');
-            const mailtoBody = encodeURIComponent(
-                `ชื่อ: ${name}\n` +
-                `อีเมล: ${email}\n` +
-                `หัวข้อ: ${subject}\n\n` +
-                `ข้อความ:\n${message}`
-            );
+            const subjectText = subject || 'Portfolio Contact';
+            const bodyText = [
+                `ชื่อ: ${name}`,
+                `อีเมล: ${email}`,
+                `หัวข้อ: ${subjectText}`,
+                '',
+                'ข้อความ:',
+                message
+            ].join('\n');
 
+            const mailtoUrl = `mailto:${recipient}?subject=${encodeURIComponent(subjectText)}&body=${encodeURIComponent(bodyText)}`;
             const submitButton = contactForm.querySelector('button[type="submit"]');
             const originalText = submitButton.textContent;
 
@@ -156,9 +159,13 @@ document.addEventListener('DOMContentLoaded', () => {
             formError.classList.add('d-none');
 
             try {
-                window.location.href = `mailto:${recipient}?subject=${mailtoSubject}&body=${mailtoBody}`;
+                if (navigator.clipboard && window.isSecureContext) {
+                    navigator.clipboard.writeText(bodyText).catch(() => {});
+                }
+
+                window.location.href = mailtoUrl;
                 formSuccess.classList.remove('d-none');
-                formSuccess.textContent = 'เปิดแอปอีเมลของคุณแล้ว กรุณาส่งข้อความเพื่อส่งข้อมูลให้ผม';
+                formSuccess.textContent = 'เปิดแอปอีเมลของคุณแล้ว กรุณาส่งข้อความเพื่อยืนยันข้อมูลต่อ';
                 contactForm.reset();
                 contactForm.classList.remove('was-validated');
             } catch (error) {
